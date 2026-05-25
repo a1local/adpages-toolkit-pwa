@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f766e">
+    <title>AdPages Toolkit</title>
+    <meta name="description" content="Offline campaign URL, ad-copy, schema, and landing-page checklist utilities.">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-copy">
+        <p class="eyebrow">AdPages Toolkit</p>
+        <h1>Offline campaign QA for local-service landing pages.</h1>
+        <p class="lede">Build tagged URLs, check ad copy limits, generate LocalBusiness JSON-LD, and prepare a launch QA list without sending data anywhere.</p>
+      </div>
+      <div class="status-stack" aria-label="App status">
+        <span class="status-pill">Offline ready</span>
+        <span class="status-pill secondary">No account</span>
+      </div>
+    </header>
+
+    <nav class="tool-nav" aria-label="Tools">
+      <a href="#utm-title">UTM Builder</a>
+      <a href="#copy-title">Ad Copy</a>
+      <a href="#schema-title">Schema</a>
+      <a href="#checklist-title">Checklist</a>
+    </nav>
+
+    <section class="use-cases" aria-label="What this toolkit helps with">
+      <article>
+        <strong>Launch cleaner campaigns</strong>
+        <span>Keep UTM naming, ad copy, schema, and page QA in one fast browser tool.</span>
+      </article>
+      <article>
+        <strong>Reduce handoff mistakes</strong>
+        <span>Copy-ready outputs make it easier to pass URLs, JSON-LD, and launch notes to a client or developer.</span>
+      </article>
+      <article>
+        <strong>Private by default</strong>
+        <span>Everything runs in your browser; no accounts, crawlers, uploads, or analytics are required.</span>
+      </article>
+    </section>
+
+    <main class="layout">
+      <section class="panel" aria-labelledby="utm-title">
+        <div class="panel-heading">
+          <div>
+            <p class="tool-kicker">Campaign links</p>
+            <h2 id="utm-title">UTM URL builder</h2>
+          </div>
+          <span class="tool-badge">URL</span>
+        </div>
+        <label>Destination URL <input id="utm-url" value="https://example.com/landing" autocomplete="url"></label>
+        <div class="field-grid">
+          <label>Source <input id="utm-source" value="google"></label>
+          <label>Medium <input id="utm-medium" value="cpc"></label>
+          <label>Campaign <input id="utm-campaign" value="perth-electrician-leads"></label>
+          <label>Term <input id="utm-term" value="emergency electrician"></label>
+          <label>Content <input id="utm-content" value="mobile-call"></label>
+        </div>
+        <div class="action-row">
+          <button id="build-utm" type="button">Build URL</button>
+          <button class="ghost-button" type="button" data-copy-target="utm-output">Copy</button>
+        </div>
+        <pre id="utm-output" class="output" aria-live="polite" tabindex="0"></pre>
+      </section>
+
+      <section class="panel" aria-labelledby="copy-title">
+        <div class="panel-heading">
+          <div>
+            <p class="tool-kicker">Google Ads</p>
+            <h2 id="copy-title">Ad copy checker</h2>
+          </div>
+          <span class="tool-badge">30 / 90</span>
+        </div>
+        <label>Headline <input id="ad-headline" value="Emergency Electrician"></label>
+        <label>Description <textarea id="ad-description">Book a local electrician for urgent repairs and switchboard help.</textarea></label>
+        <div class="meter-grid" aria-label="Character counts">
+          <span>Headline <strong id="headline-count">0/30</strong></span>
+          <span>Description <strong id="description-count">0/90</strong></span>
+        </div>
+        <div class="action-row">
+          <button id="check-copy" type="button">Check Copy</button>
+          <button class="ghost-button" type="button" data-copy-target="copy-output">Copy</button>
+        </div>
+        <pre id="copy-output" class="output" aria-live="polite" tabindex="0"></pre>
+      </section>
+
+      <section class="panel" aria-labelledby="schema-title">
+        <div class="panel-heading">
+          <div>
+            <p class="tool-kicker">Structured data</p>
+            <h2 id="schema-title">LocalBusiness schema</h2>
+          </div>
+          <span class="tool-badge">JSON-LD</span>
+        </div>
+        <div class="field-grid">
+          <label>Name <input id="business-name" value="Example Electrical"></label>
+          <label>Type <input id="business-type" value="Electrician"></label>
+          <label>URL <input id="business-url" value="https://example.com"></label>
+          <label>Phone <input id="business-phone" value="+61 8 5555 0100"></label>
+          <label>Locality <input id="business-locality" value="Perth"></label>
+          <label>Region <input id="business-region" value="WA"></label>
+          <label>Country <input id="business-country" value="AU"></label>
+          <label>Areas <input id="business-areas" value="Perth, Fremantle, Joondalup"></label>
+        </div>
+        <div class="action-row">
+          <button id="build-schema" type="button">Build Schema</button>
+          <button class="ghost-button" type="button" data-copy-target="schema-output">Copy</button>
+        </div>
+        <pre id="schema-output" class="output code-output" aria-live="polite" tabindex="0"></pre>
+      </section>
+
+      <section class="panel" aria-labelledby="checklist-title">
+        <div class="panel-heading">
+          <div>
+            <p class="tool-kicker">Launch QA</p>
+            <h2 id="checklist-title">Launch checklist</h2>
+          </div>
+          <span class="tool-badge">QA</span>
+        </div>
+        <label>Page name <input id="page-name" value="Emergency electrician landing page"></label>
+        <label>Campaign <input id="checklist-campaign" value="perth-electrician-leads"></label>
+        <div class="action-row">
+          <button id="build-checklist" type="button">Build Checklist</button>
+          <button class="ghost-button" type="button" data-copy-target="checklist-output">Copy</button>
+        </div>
+        <pre id="checklist-output" class="output" aria-live="polite" tabindex="0"></pre>
+      </section>
+    </main>
+
+    <footer class="brand-footer">
+      <span>Free local marketing tool by <a href="https://a1local.com.au/extensions/" target="_blank" rel="noopener">AdPages from A1 Local</a>.</span>
+      <span>Use it, share it, or link to the public tool page when it helps your checklist.</span>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

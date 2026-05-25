@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="AdPages">
+  <rect width="512" height="512" rx="88" fill="#1f3d36"/>
+  <path d="M122 366h54l24-64h112l24 64h56L286 146h-58L122 366Zm95-112 39-101 39 101h-78Z" fill="#f7f4ef"/>
+  <path d="M128 402h256" stroke="#f0b35b" stroke-width="28" stroke-linecap="round"/>
+</svg>
