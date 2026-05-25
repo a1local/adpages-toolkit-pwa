@@ -1,0 +1,28 @@
+{
+  "utm": {
+    "url": "https://example.com/landing",
+    "source": "google",
+    "medium": "cpc",
+    "campaign": "perth-electrician-leads",
+    "term": "emergency electrician",
+    "content": "mobile-call"
+  },
+  "adCopy": {
+    "headline": "Emergency Electrician",
+    "description": "Book a local electrician for urgent repairs and switchboard help."
+  },
+  "business": {
+    "businessName": "Example Electrical",
+    "businessType": "Electrician",
+    "url": "https://example.com",
+    "telephone": "+61 8 5555 0100",
+    "addressLocality": "Perth",
+    "addressRegion": "WA",
+    "addressCountry": "AU",
+    "areaServed": "Perth, Fremantle, Joondalup"
+  },
+  "checklist": {
+    "pageName": "Emergency electrician landing page",
+    "campaign": "perth-electrician-leads"
+  }
+}

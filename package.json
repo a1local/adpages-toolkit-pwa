@@ -1,0 +1,20 @@
+{
+  "name": "adpages-toolkit-pwa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline-first AdPages utility PWA scaffold for campaign and landing-page QA tools.",
+  "license": "MIT",
+  "homepage": "https://a1local.com.au/extensions/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a1local/adpages-toolkit-pwa.git"
+  },
+  "bugs": {
+    "url": "https://a1local.com.au/extensions/support/"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  }
+}
