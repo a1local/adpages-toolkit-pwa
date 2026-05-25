@@ -1,10 +1,12 @@
-const CACHE_NAME = "adpages-toolkit-pwa-v3";
+const CACHE_NAME = "adpages-toolkit-pwa-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
   "./manifest.webmanifest",
+  "./icon-192.png",
+  "./icon-512.png",
   "./icon-192.svg",
   "./icon-512.svg"
 ];
