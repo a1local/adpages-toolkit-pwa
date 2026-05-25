@@ -13,6 +13,8 @@ const requiredFiles = [
   "public/app.js",
   "public/manifest.webmanifest",
   "public/sw.js",
+  "public/icon-192.png",
+  "public/icon-512.png",
   "public/icon-192.svg",
   "public/icon-512.svg",
   "scripts/check.mjs",
@@ -50,7 +52,8 @@ async function main() {
 
   const manifest = JSON.parse(contents.get("public/manifest.webmanifest"));
   assert(manifest.display === "standalone", "manifest must be installable as standalone");
-  assert(manifest.icons?.length >= 2, "manifest must include icon entries");
+  assert(manifest.icons?.length >= 4, "manifest must include PNG and SVG icon entries");
+  assert(manifest.icons.some((icon) => icon.src === "icon-512.png" && icon.type === "image/png"), "manifest must include a 512px PNG icon for splash screens");
   assert(manifest.start_url === "./index.html", "manifest start_url should point to local app shell");
 
   const sample = JSON.parse(contents.get("examples/tool-state.json"));
@@ -70,6 +73,7 @@ async function main() {
 
   const sw = contents.get("public/sw.js");
   assert(sw.includes("CACHE_NAME") && sw.includes("caches.match"), "service worker must cache the app shell");
+  assert(sw.includes("./icon-512.png"), "service worker must cache the PNG app icon");
 
   const readme = contents.get("README.md");
   assert(readme.includes("Microsoft Store PWA packaging later"), "README must document Microsoft Store path as later");
